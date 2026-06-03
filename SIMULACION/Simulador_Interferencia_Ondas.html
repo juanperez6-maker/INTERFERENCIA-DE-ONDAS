@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="es"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg4NWQ3NDljYzY2NDljMDMxOWY1YmJlYWYwMWU4ZmVjZDIyZjk1YzQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMDMxMjc2NzI1MTgzMjAwMzc2NiIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzUzMTkwZjVhMGRlYTc4YzlfaW5kZXguaHRtbC05MTQifSwiZXhwIjoxNzc4MzQ1MDg2LCJpYXQiOjE3NzgzNDE0ODYsImFsZyI6IlJTMjU2In0.j-Kp31yM87MhfRO9GzIRei3XQ4s9Go7lBh_mqkjkgbxNubMI-ykW2IrqHKzD312gfQikYqMTW2SpCluHDEJfjPGRVoyNEYUMp5glqQRorDmrnU0_qRGZAK-c8jOT861e4nQoQgnHgbjSkN5C441DqgIM4h41FiCTjGJs7q6Qe-0Gbfzv9kC1Fk7TQnNCSQYaofnD_ZLSII_grVfJ-D4eKIazVjjMEhSjne9dF-ymA_AIAh-8b39E1VShBnFBeG_rgi5YgNMYkLp9xnevr4Tt80TTemcDY33_MFKoh8mR9qxXQSqxAGWjSH5LK1IUCbjjG4OyHHf3OtRR_GFm4AzigA","c_53190f5a0dea78c9_index.html-914")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){var c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){var b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){let [c,,e]=ia.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;var c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){var d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){var d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function ua(a,b){return t(function*(){var d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){var d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield wa(a,b);e=yield B(e);var f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
+f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;let c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){var b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.g=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.h="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
+c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
+"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
+Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interferencia de Ondas | Simulador Interactivo</title>
+    
+    <!-- Fuentes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- KaTeX para Ecuaciones Matemáticas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous"></script>
+    
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* ==========================================================================
+           🎨 VARIABLES CSS & THEME (GLASSMORPHISM & NEUMORPHISM)
+           ========================================================================== */
+        :root {
+            /* Colores Principales */
+            --bg-body: #f0f2f5;
+            --bg-panel: rgba(255, 255, 255, 0.75);
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --border-glass: rgba(255, 255, 255, 0.6);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            
+            /* Colores de Acento (Fuentes y Líneas) */
+            --accent-blue: #0ea5e9;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-orange: #f97316;
+            
+            /* Efectos */
+            --shadow-neo: 5px 5px 10px #d1d5db, -5px -5px 10px #ffffff;
+            --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            --blur-glass: blur(12px);
+            
+            /* Tipografía */
+            --font-main: 'Poppins', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Layout */
+            --ribbon-h: 64px;
+            --footer-h: 40px;
+            --panel-l-w: 320px;
+            --panel-r-w: 260px;
+            
+            transition: all 0.4s ease;
+        }
+
+        /* Tema Oscuro */
+        body.dark-mode {
+            --bg-body: #0f172a;
+            --bg-panel: rgba(30, 41, 59, 0.75);
+            --bg-glass: rgba(15, 23, 42, 0.85);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-neo: 5px 5px 10px #0b1120, -5px -5px 10px #131d34;
+            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        /* ==========================================================================
+           🏗️ RESET Y LAYOUT BASE
+           ========================================================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Utilidad Glassmorphism */
+        .glass {
+            background: var(--bg-panel);
+            backdrop-filter: var(--blur-glass);
+            -webkit-backdrop-filter: var(--blur-glass);
+            border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-glass);
+        }
+
+        /* ==========================================================================
+           🎀 1. RIBBON SUPERIOR (Header)
+           ========================================================================== */
+        header {
+            height: var(--ribbon-h);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--bg-glass);
+            box-shadow: var(--shadow-neo);
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animación del Logo */
+        .logo-ring {
+            position: absolute;
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            animation: pulse-ring 2s linear infinite;
+        }
+        .logo-ring:nth-child(2) { border-color: var(--accent-purple); animation-delay: -1s; }
+        
+        @keyframes pulse-ring {
+            0% { width: 0; height: 0; opacity: 1; }
+            100% { width: 40px; height: 40px; opacity: 0; }
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
+
+        .header-actions { display: flex; gap: 12px; }
+        
+        .btn-glass {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-glass);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex; align-items: center; gap: 8px;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-glass);
+        }
+        .btn-glass:hover { transform: translateY(-2px); box-shadow: var(--shadow-neo); }
+
+        /* ==========================================================================
+           📑 2. BARRA DE PESTAÑAS (Tabs)
+           ========================================================================== */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            z-index: 90;
+        }
+
+        .tabs {
+            display: flex;
+            background: var(--bg-panel);
+            border-radius: 30px;
+            padding: 4px;
+            box-shadow: var(--shadow-glass);
+            backdrop-filter: var(--blur-glass);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 26px;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .tab-btn.active {
+            background: var(--text-main);
+            color: var(--bg-body);
+            box-shadow: var(--shadow-neo);
+        }
+
+        /* ==========================================================================
+           🏗️ CONTENEDOR PRINCIPAL Y PANELES
+           ========================================================================== */
+        main {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 0 16px 16px 16px;
+            gap: 16px;
+        }
+
+        .panel {
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        .panel::-webkit-scrollbar { width: 6px; }
+        .panel::-webkit-scrollbar-track { background: transparent; }
+        .panel::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 10px; }
+
+        /* Panel Izquierdo */
+        #left-panel {
+            width: var(--panel-l-w);
+            min-width: 250px;
+            padding: 16px;
+            resize: horizontal;
+            z-index: 20;
+        }
+
+        /* Panel Central */
+        #center-panel {
+            flex: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff; /* Fijo para el canvas como papel */
+        }
+        
+        body.dark-mode #center-panel { background: #1a1a2e; }
+
+        /* Panel Derecho */
+        #right-panel {
+            width: var(--panel-r-w);
+            min-width: 200px;
+            padding: 16px;
+            z-index: 20;
+        }
+
+        /* ==========================================================================
+           🎛️ CONTROLES UI (Sliders, Toggles, Accordions)
+           ========================================================================== */
+        .accordion {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.03);
+        }
+        body.dark-mode .accordion { background: rgba(255,255,255,0.03); }
+
+        .accordion-header {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .accordion-content {
+            padding: 0 16px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .badge {
+            background: var(--bg-glass);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-main);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Sliders */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px; width: 16px;
+            border-radius: 50%;
+            background: var(--thumb-color, var(--text-main));
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+        }
+        input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+        
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px;
+            cursor: pointer;
+            background: var(--text-muted);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        /* Toggles estilo iOS */
+        .toggle-container {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.85rem; font-weight: 600; color: var(--text-main);
+        }
+        .toggle-switch {
+            position: relative; width: 44px; height: 24px;
+            appearance: none; background: var(--text-muted);
+            border-radius: 12px; outline: none; cursor: pointer;
+            transition: background 0.3s;
+        }
+        .toggle-switch::after {
+            content: ''; position: absolute; top: 2px; left: 2px;
+            width: 20px; height: 20px; border-radius: 50%;
+            background: white; transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .toggle-switch:checked { background: var(--toggle-color, var(--accent-blue)); }
+        .toggle-switch:checked::after { transform: translateX(20px); }
+
+        /* Indicador LCD de Punto P */
+        .lcd-display {
+            background: #111; color: #0f0;
+            font-family: var(--font-mono); font-size: 0.9rem;
+            padding: 10px; border-radius: 8px;
+            text-shadow: 0 0 5px #0f0;
+            display: flex; flex-direction: column; gap: 4px;
+            border: 2px solid #333;
+        }
+        .lcd-display span { display: flex; justify-content: space-between; }
+
+        /* Controles de Animación */
+        .anim-controls {
+            display: flex; justify-content: center; gap: 16px; margin-top: 10px;
+        }
+        .btn-anim {
+            width: 48px; height: 48px; border-radius: 50%;
+            border: none; background: var(--bg-glass); box-shadow: var(--shadow-neo);
+            color: var(--text-main); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s;
+        }
+        .btn-anim:hover { transform: scale(1.05); color: var(--accent-blue); }
+        .btn-anim:active { transform: scale(0.95); box-shadow: inset 5px 5px 10px #d1d5db, inset -5px -5px 10px #ffffff; }
+        body.dark-mode .btn-anim:active { box-shadow: inset 5px 5px 10px #0b1120, inset -5px -5px 10px #131d34; }
+
+        /* ==========================================================================
+           🖼️ CANVAS Y OVERLAYS (Panel Central)
+           ========================================================================== */
+        .canvas-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: none;
+        }
+        .canvas-container.active { display: block; }
+        canvas { width: 100%; height: 100%; cursor: crosshair; }
+        canvas.grabbing { cursor: grabbing !important; }
+        canvas.grab { cursor: grab; }
+
+        /* Panel Flotante de Controles Canvas */
+        .canvas-overlay-tools {
+            position: absolute; top: 16px; right: 16px;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .tool-btn {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: var(--bg-glass); border: 1px solid var(--border-glass);
+            color: var(--text-main); display: flex; justify-content: center; align-items: center;
+            cursor: pointer; backdrop-filter: var(--blur-glass); transition: 0.2s;
+            position: relative;
+        }
+        .tool-btn:hover { background: var(--text-main); color: var(--bg-body); }
+        .tool-btn::before { /* Tooltip */
+            content: attr(data-tooltip);
+            position: absolute; right: 110%; top: 50%; transform: translateY(-50%);
+            background: var(--text-main); color: var(--bg-body);
+            padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+            white-space: nowrap; opacity: 0; pointer-events: none; transition: 0.2s;
+        }
+        .tool-btn:hover::before { opacity: 1; }
+
+        /* Ecuaciones en Vivo (Easter Egg) */
+        .live-equations {
+            position: absolute; bottom: 16px; left: 16px;
+            background: rgba(255,255,255,0.85); padding: 12px; border-radius: 8px;
+            box-shadow: var(--shadow-glass); font-size: 0.9rem;
+            backdrop-filter: var(--blur-glass); pointer-events: none;
+        }
+        body.dark-mode .live-equations { background: rgba(15,23,42,0.85); }
+
+        /* Tooltip del Cursor */
+        #cursor-tooltip {
+            position: absolute; background: rgba(0,0,0,0.8); color: white;
+            padding: 6px 10px; border-radius: 6px; font-family: var(--font-mono);
+            font-size: 0.75rem; pointer-events: none; display: none; z-index: 1000;
+            transform: translate(15px, 15px); white-space: pre-line;
+        }
+
+        /* ==========================================================================
+           🎨 PANEL DERECHO (Estilos)
+           ========================================================================== */
+        .color-picker-wrap {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 8px; font-size: 0.85rem; font-weight: 600;
+        }
+        input[type="color"] {
+            -webkit-appearance: none; border: none; width: 32px; height: 32px;
+            border-radius: 50%; overflow: hidden; cursor: pointer; padding: 0;
+        }
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type="color"]::-webkit-color-swatch { border: 2px solid var(--border-glass); border-radius: 50%; }
+
+        select.glass-select {
+            width: 100%; padding: 8px; border-radius: 8px;
+            background: var(--bg-body); color: var(--text-main);
+            border: 1px solid var(--border-glass); font-family: var(--font-main);
+            margin-top: 5px; outline: none; cursor: pointer;
+        }
+
+        .btn-full {
+            width: 100%; padding: 10px; border-radius: 8px; margin-top: 10px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white; border: none; font-weight: bold; cursor: pointer;
+            display: flex; justify-content: center; align-items: center; gap: 8px;
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+        }
+        .btn-full:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+        /* ==========================================================================
+           🦶 FOOTER
+           ========================================================================== */
+        footer {
+            height: var(--footer-h);
+            display: flex; justify-content: center; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted); position: relative;
+            z-index: 100;
+        }
+        .hidden-aurora-btn {
+            position: absolute; right: 24px; opacity: 0.1; cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .hidden-aurora-btn:hover { opacity: 1; color: var(--accent-green); }
+
+        /* ==========================================================================
+           🪟 MODALES
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        
+        .modal-content {
+            background: var(--bg-body); width: 90%; max-width: 600px;
+            max-height: 85vh; border-radius: 20px; padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3); position: relative;
+            transform: scale(0.9); transition: transform 0.3s;
+            overflow-y: auto; color: var(--text-main);
+        }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+        
+        .btn-close-modal {
+            position: absolute; top: 20px; right: 20px;
+            background: transparent; border: none; color: var(--text-muted);
+            cursor: pointer; transition: 0.3s;
+        }
+        .btn-close-modal:hover { color: var(--accent-red); transform: rotate(90deg); }
+
+        .modal-content h2 { margin-bottom: 20px; color: var(--accent-blue); }
+        .modal-content p, .modal-content li { margin-bottom: 12px; line-height: 1.6; }
+        .math-block { background: var(--bg-glass); padding: 15px; border-radius: 10px; margin: 15px 0; text-align: center; overflow-x: auto; }
+
+        /* ==========================================================================
+           ✨ AURORA BOREAL (Easter Egg)
+           ========================================================================== */
+        #aurora-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1; opacity: 0; transition: opacity 2s; pointer-events: none;
+            background: linear-gradient(120deg, #0f172a, #020617);
+        }
+        #aurora-bg.active { opacity: 1; }
+        .aurora-blob {
+            position: absolute; filter: blur(80px); border-radius: 50%;
+            animation: aurora-move 15s infinite alternate ease-in-out;
+            mix-blend-mode: screen;
+        }
+        .blob1 { width: 500px; height: 500px; background: rgba(16, 185, 129, 0.4); top: -100px; left: -100px; }
+        .blob2 { width: 600px; height: 600px; background: rgba(14, 165, 233, 0.4); bottom: -200px; right: -100px; animation-delay: -5s; }
+        .blob3 { width: 400px; height: 400px; background: rgba(139, 92, 246, 0.4); top: 30%; left: 40%; animation-delay: -10s; }
+
+        @keyframes aurora-move {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.2); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            :root { --panel-r-w: 200px; }
+        }
+        @media (max-width: 768px) {
+            main { flex-direction: column; overflow-y: auto; }
+            #left-panel, #right-panel { width: 100%; min-height: fit-content; resize: none; }
+            #center-panel { min-height: 400px; flex: none; }
+            .header-actions { display: none; /* Simplificamos en móvil */ }
+        }
+    </style>
+<style>@keyframes fadeout { 0%{opacity:1; transform:translate(-50%, 0);} 80%{opacity:1;} 100%{opacity:0; transform:translate(-50%, -20px);} }</style></head>
+<body>
+
+    <!-- Fondo Aurora Boreal (Oculto por defecto) -->
+    <div id="aurora-bg">
+        <div class="aurora-blob blob1"></div>
+        <div class="aurora-blob blob2"></div>
+        <div class="aurora-blob blob3"></div>
+    </div>
+
+    <!-- 🎀 RIBBON SUPERIOR -->
+    <header id="ribbon" class="glass">
+        <div class="logo-container" id="main-logo" title="Doble clic para sorpresa">
+            <div class="logo-icon">
+                <div class="logo-ring"></div>
+                <div class="logo-ring"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="waves" aria-hidden="true" class="lucide lucide-waves"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"></path><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"></path><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"></path></svg>
+            </div>
+            <h1>Interferencia de Ondas</h1>
+        </div>
+        <div class="header-actions">
+            <button class="btn-glass" onclick="openModal('theory-modal')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="book-open" aria-hidden="true" class="lucide lucide-book-open"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg> Teoría</button>
+            <button class="btn-glass" onclick="openModal('help-modal')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="help-circle" aria-hidden="true" class="lucide lucide-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg> Ayuda</button>
+        </div>
+    </header>
+
+    <!-- 📑 BARRA DE PESTAÑAS -->
+    <nav class="tabs-container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="2d"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="grid" aria-hidden="true" class="lucide lucide-grid"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg> Patrón 2D</button>
+            <button class="tab-btn" data-tab="section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-2" aria-hidden="true" class="lucide lucide-bar-chart-2"><path d="M5 21v-6"></path><path d="M12 21V3"></path><path d="M19 21V9"></path></svg> Sección Transv.</button>
+            <button class="tab-btn" data-tab="anim"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="play-circle" aria-hidden="true" class="lucide lucide-play-circle"><path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"></path><circle cx="12" cy="12" r="10"></circle></svg> Animación</button>
+        </div>
+    </nav>
+
+    <!-- 🏗️ CONTENEDOR PRINCIPAL -->
+    <main>
+        <!-- 📏 PANEL IZQUIERDO -->
+        <aside id="left-panel" class="panel glass">
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAcc(this)">
+                    <span>📡 Parámetros de Fuentes</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+                </div>
+                <div class="accordion-content">
+                    <!-- F1 -->
+                    <div class="control-group">
+                        <div class="control-header"><span>Longitud Onda λ₁ (F₁)</span><span class="badge" id="val-l1">2.0 m</span></div>
+                        <input type="range" id="sl-l1" min="0.5" max="5.0" step="0.05" value="2.0" style="--thumb-color: var(--accent-blue)">
+                    </div>
+                    <div class="control-group">
+                        <div class="control-header"><span>Amplitud A₁ (F₁)</span><span class="badge" id="val-a1">1.0</span></div>
+                        <input type="range" id="sl-a1" min="0.1" max="5.0" step="0.1" value="1.0" style="--thumb-color: var(--accent-blue)">
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid var(--border-glass)">
+                    <!-- F2 -->
+                    <div class="control-group">
+                        <div class="control-header"><span>Longitud Onda λ₂ (F₂)</span><span class="badge" id="val-l2">2.0 m</span></div>
+                        <input type="range" id="sl-l2" min="0.5" max="5.0" step="0.05" value="2.0" style="--thumb-color: var(--accent-green)">
+                    </div>
+                    <div class="control-group">
+                        <div class="control-header"><span>Amplitud A₂ (F₂)</span><span class="badge" id="val-a2">1.0</span></div>
+                        <input type="range" id="sl-a2" min="0.1" max="5.0" step="0.1" value="1.0" style="--thumb-color: var(--accent-green)">
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid var(--border-glass)">
+                    <!-- Configuración Espacial -->
+                    <div class="control-group">
+                        <div class="control-header"><span>Separación Fuentes (d)</span><span class="badge" id="val-d">6.0 m</span></div>
+                        <input type="range" id="sl-d" min="0.5" max="20.0" step="0.5" value="6.0" style="--thumb-color: var(--accent-purple)">
+                    </div>
+                    <div class="control-group">
+                        <div class="control-header"><span>Fase Relativa (Δφ)</span><span class="badge" id="val-phi">0.00 rad</span></div>
+                        <input type="range" id="sl-phi" min="0" max="6.28" step="0.01" value="0" style="--thumb-color: var(--accent-orange)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion" id="acc-layers">
+                <div class="accordion-header" onclick="toggleAcc(this)">
+                    <span>👁️ Visibilidad de Capas</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+                </div>
+                <div class="accordion-content">
+                    <label class="toggle-container">🔵 Frentes de Onda F₁ <input type="checkbox" class="toggle-switch" id="tg-wf1" checked="" style="--toggle-color: var(--accent-blue)"></label>
+                    <label class="toggle-container">🟢 Frentes de Onda F₂ <input type="checkbox" class="toggle-switch" id="tg-wf2" checked="" style="--toggle-color: var(--accent-green)"></label>
+                    <label class="toggle-container">🟣 Interf. Constructiva <input type="checkbox" class="toggle-switch" id="tg-const" checked="" style="--toggle-color: var(--accent-purple)"></label>
+                    <label class="toggle-container">🔴 Interf. Destructiva <input type="checkbox" class="toggle-switch" id="tg-dest" checked="" style="--toggle-color: var(--accent-red)"></label>
+                    <label class="toggle-container">🌈 Mapa de Calor <input type="checkbox" class="toggle-switch" id="tg-heat" style="--toggle-color: var(--text-main)"></label>
+                </div>
+            </div>
+
+            <div class="accordion" id="acc-anim" style="display:none;">
+                <div class="accordion-header" onclick="toggleAcc(this)">
+                    <span>🎬 Control de Animación</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+                </div>
+                <div class="accordion-content">
+                    <div class="control-group">
+                        <div class="control-header"><span>Velocidad (v)</span><span class="badge" id="val-v">1.0x</span></div>
+                        <input type="range" id="sl-v" min="0.1" max="3.0" step="0.1" value="1.0">
+                    </div>
+                    <div class="anim-controls">
+                        <button class="btn-anim" id="btn-play" title="Play/Pause"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="pause" aria-hidden="true" class="lucide lucide-pause"><rect x="14" y="3" width="5" height="18" rx="1"></rect><rect x="5" y="3" width="5" height="18" rx="1"></rect></svg></button>
+                        <button class="btn-anim" id="btn-reset" title="Reiniciar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="rotate-ccw" aria-hidden="true" class="lucide lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAcc(this)">
+                    <span>📍 Punto de Medición P</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+                </div>
+                <div class="accordion-content">
+                    <div class="lcd-display">
+                        <span>P: (<span id="lcd-x">0.00</span>, <span id="lcd-y">5.00</span>)</span>
+                        <span>r₁: <span id="lcd-r1">5.83</span> m</span>
+                        <span>r₂: <span id="lcd-r2">5.83</span> m</span>
+                        <span>Δr: <span id="lcd-dr">0.00</span> m</span>
+                        <span style="color: var(--accent-blue); margin-top:4px;">Estado: <span id="lcd-state" style="color: rgb(139, 92, 246);">Constructiva</span></span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- 🖼️ PANEL CENTRAL -->
+        <section id="center-panel" class="glass">
+            
+            <!-- Canvas 2D Pattern -->
+            <div class="canvas-container active" id="view-2d">
+                <canvas id="canvas2d" width="539" height="555"></canvas>
+            </div>
+            
+            <!-- Canvas Cross Section -->
+            <div class="canvas-container" id="view-section">
+                <canvas id="canvas1d" width="539" height="555"></canvas>
+                <div style="position: absolute; bottom: 10px; width: 80%; left: 10%; background: var(--bg-glass); padding: 10px; border-radius: 10px; box-shadow: var(--shadow-glass); z-index: 10;">
+                    <div class="control-group">
+                        <div class="control-header"><span>Distancia Pantalla (D)</span><span class="badge" id="val-D">5.0 m</span></div>
+                        <input type="range" id="sl-D" min="1.0" max="20.0" step="0.5" value="5.0">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Canvas Animation -->
+            <div class="canvas-container" id="view-anim">
+                <canvas id="canvasAnim" width="539" height="555"></canvas>
+            </div>
+
+            <!-- Overlays Comunes -->
+            <div class="canvas-overlay-tools">
+                <button class="tool-btn" id="tool-zoomin" data-tooltip="Acercar (Zoom In)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zoom-in" aria-hidden="true" class="lucide lucide-zoom-in"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></button>
+                <button class="tool-btn" id="tool-zoomout" data-tooltip="Alejar (Zoom Out)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zoom-out" aria-hidden="true" class="lucide lucide-zoom-out"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></button>
+                <button class="tool-btn" id="tool-pan" data-tooltip="Mover (Pan)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="hand" aria-hidden="true" class="lucide lucide-hand"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"></path><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"></path><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg></button>
+                <button class="tool-btn" id="tool-resetview" data-tooltip="Restablecer Vista"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="home" aria-hidden="true" class="lucide lucide-home"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+            </div>
+
+            <div class="live-equations" id="live-eq"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1.0</mn><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mn>2.0</mn></mfrac><msub><mi>r</mi><mn>1</mn></msub><mo>−</mo><mi>ω</mi><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mn>1.0</mn><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mn>2.0</mn></mfrac><msub><mi>r</mi><mn>2</mn></msub><mo>−</mo><mi>ω</mi><mi>t</mi><mo>+</mo><mn>0.00</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Psi(x,y,t) = 1.0\sin(\frac{2\pi}{2.0}r_1 - \omega t) + 1.0\sin(\frac{2\pi}{2.0}r_2 - \omega t + 0.00)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">Ψ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mord mathnormal" style="margin-right: 0.0359em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 1.1901em; vertical-align: -0.345em;"></span><span class="mord">1.0</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.8451em;"><span class="" style="top: -2.655em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2.0</span></span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.394em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight" style="margin-right: 0.0359em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.345em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0278em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0278em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathnormal" style="margin-right: 0.0359em;">ω</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 1.1901em; vertical-align: -0.345em;"></span><span class="mord">1.0</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.8451em;"><span class="" style="top: -2.655em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2.0</span></span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.394em;"><span class="pstrut" style="height: 3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight" style="margin-right: 0.0359em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.345em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0278em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0278em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 0.6984em; vertical-align: -0.0833em;"></span><span class="mord mathnormal" style="margin-right: 0.0359em;">ω</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">0.00</span><span class="mclose">)</span></span></span></span></div>
+
+            <div id="cursor-tooltip" style="left: 815px; top: 331px; display: none;">x: 4.81, y: 1.99<br>r₁: 8.06<br>r₂: 2.69<br>Δr: 5.37</div>
+        </section>
+
+        <!-- 🎨 PANEL DERECHO -->
+        <aside id="right-panel" class="panel glass">
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAcc(this)">
+                    <span>🎨 Personalización Visual</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+                </div>
+                <div class="accordion-content">
+                    <div class="color-picker-wrap">
+                        <span>Color F₁</span> <input type="color" id="col-f1" value="#0ea5e9">
+                    </div>
+                    <div class="color-picker-wrap">
+                        <span>Color F₂</span> <input type="color" id="col-f2" value="#10b981">
+                    </div>
+                    <div class="color-picker-wrap">
+                        <span>Lín. Construct.</span> <input type="color" id="col-const" value="#8b5cf6">
+                    </div>
+                    <div class="color-picker-wrap">
+                        <span>Lín. Destruct.</span> <input type="color" id="col-dest" value="#ef4444">
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid var(--border-glass)">
+                    <div class="control-group">
+                        <div class="control-header"><span>Grosor Líneas</span><span class="badge" id="val-lw">2 px</span></div>
+                        <input type="range" id="sl-lw" min="1" max="5" step="1" value="2">
+                    </div>
+                    <div class="control-group" style="margin-top: 10px;">
+                        <span style="font-size:0.85rem; font-weight:600;">Paleta Heatmap</span>
+                        <select id="sel-palette" class="glass-select">
+                            <option value="viridis">Viridis (Frío a Cálido)</option>
+                            <option value="inferno">Inferno (Fuego)</option>
+                            <option value="gray">Escala de Grises</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding: 16px;">
+                <label class="toggle-container" style="margin-bottom: 15px;">🌗 Tema Oscuro <input type="checkbox" class="toggle-switch" id="tg-dark"></label>
+                
+                <button class="btn-full" id="btn-young" style="background: linear-gradient(135deg, #f59e0b, #d97706); margin-bottom: 15px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="split-square-vertical" aria-hidden="true" class="lucide lucide-split-square-vertical"><path d="M5 8V5c0-1 1-2 2-2h10c1 0 2 1 2 2v3"></path><path d="M19 16v3c0 1-1 2-2 2H7c-1 0-2-1-2-2v-3"></path><line x1="4" x2="20" y1="12" y2="12"></line></svg> Exp. Doble Rendija
+                </button>
+
+                <button class="btn-full" id="btn-download-app" style="background: linear-gradient(135deg, #10b981, #059669); margin-bottom: 15px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code" aria-hidden="true" class="lucide lucide-code"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg> Descargar App HTML
+                </button>
+
+                <button class="btn-full" id="btn-export">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="download" aria-hidden="true" class="lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg> Exportar PNG
+                </button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 🦶 FOOTER -->
+    <footer class="glass">
+        © 2026 — Néstor Fabio Montoya Palacios
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles hidden-aurora-btn" id="btn-aurora" title="Modo Aurora"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+    </footer>
+
+    <!-- 🪟 MODALES -->
+    <!-- Teoría -->
+    <div class="modal-overlay" id="theory-modal">
+        <div class="modal-content">
+            <button class="btn-close-modal" onclick="closeModal('theory-modal')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" size="32" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+            <h2>📖 Fundamentos Teóricos</h2>
+            <p>El <strong>principio de superposición</strong> establece que cuando dos o más ondas coinciden en el espacio, el desplazamiento resultante es la suma algebraica de los desplazamientos individuales.</p>
+            
+            <p>Ecuación de onda para una fuente puntual:</p>
+            <div class="math-block">
+                $$ \Psi_i(r_i, t) = A_i \sin(k_i r_i - \omega_i t + \varphi_i) $$
+            </div>
+
+            <p>La amplitud resultante estacionaria (para fuentes coherentes de misma frecuencia) viene dada por:</p>
+            <div class="math-block">
+                $$ A_{res} = \sqrt{A_1^2 + A_2^2 + 2A_1 A_2 \cos(\Delta\varphi + k\Delta r)} $$
+            </div>
+
+            <p>Donde el desfase espacial es \(\Delta r = |r_1 - r_2|\). Esto da lugar a patrones de franjas hiperbólicas:</p>
+            <ul>
+                <li><strong>Interferencia Constructiva:</strong> Ocurre cuando las ondas están en fase. <br> \(\Delta r = n\lambda\)</li>
+                <li><strong>Interferencia Destructiva:</strong> Ocurre cuando las ondas están en antifase. <br> \(\Delta r = \left(n + \frac{1}{2}\right)\lambda\)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ayuda -->
+    <div class="modal-overlay" id="help-modal">
+        <div class="modal-content">
+            <button class="btn-close-modal" onclick="closeModal('help-modal')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" size="32" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+            <h2>❓ Manual de Usuario</h2>
+            <ul>
+                <li><strong>Navegación:</strong> Usa las pestañas superiores para cambiar entre el patrón 2D estático, la vista de sección transversal 1D y la simulación animada en el tiempo.</li>
+                <li><strong>Interacción en Canvas:</strong> Puedes arrastrar los focos (F₁ y F₂) y el punto de medición P directamente con el ratón. Usa la rueda del ratón para hacer zoom, o la herramienta "Mano" para desplazar la vista.</li>
+                <li><strong>Panel Izquierdo:</strong> Ajusta en tiempo real las longitudes de onda, amplitudes, fase y distancia de separación. Alterna la visibilidad de guías y mapas de calor.</li>
+                <li><strong>Panel Derecho:</strong> Personaliza el aspecto visual (colores, paletas, modo oscuro). Haz clic en "Exportar PNG" para guardar la imagen actual.</li>
+                <li><strong>Experimento de Young:</strong> Botón naranja para autoconfigurar la simulación como el clásico experimento de la doble rendija.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         🚀 JAVASCRIPT (Lógica, Física y Renderizado)
+         ========================================================================== -->
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // ┌─────────────────────────────────────────┐
+        // │ 🔧 ESTADO Y CONFIGURACIÓN               │
+        // └─────────────────────────────────────────┘
+        const State = {
+            // Física
+            lambda1: 2.0, lambda2: 2.0,
+            A1: 1.0, A2: 1.0,
+            d: 6.0,
+            phi: 0.0,
+            screenD: 5.0, // Distancia para vista 1D
+            // Animación
+            v: 1.0, t: 0, isPlaying: true,
+            // Punto P
+            P: { x: 0, y: 5 },
+            // UI y Vista
+            activeTab: '2d',
+            panActive: false,
+            // Transformación Canvas (px por metro, offset)
+            scale: 40, 
+            offsetX: 0, offsetY: 0,
+            // Colores
+            colF1: '#0ea5e9', colF2: '#10b981', 
+            colConst: '#8b5cf6', colDest: '#ef4444',
+            lineWidth: 2, palette: 'viridis',
+            // Visibilidad
+            showWf1: true, showWf2: true, showConst: true, showDest: true, showHeat: false
+        };
+
+        // Cache de focos calculados a partir de d
+        const getFoci = () => [
+            { x: -State.d / 2, y: 0, id: 1 },
+            { x: State.d / 2, y: 0, id: 2 }
+        ];
+
+        // ┌─────────────────────────────────────────┐
+        // │ 🎛️ GESTIÓN DEL DOM Y EVENTOS            │
+        // └─────────────────────────────────────────┘
+        const UI = {
+            // DOM Elements
+            c2d: document.getElementById('canvas2d'),
+            c1d: document.getElementById('canvas1d'),
+            cAnim: document.getElementById('canvasAnim'),
+            tooltip: document.getElementById('cursor-tooltip'),
+            lcd: {
+                x: document.getElementById('lcd-x'), y: document.getElementById('lcd-y'),
+                r1: document.getElementById('lcd-r1'), r2: document.getElementById('lcd-r2'),
+                dr: document.getElementById('lcd-dr'), state: document.getElementById('lcd-state')
+            },
+            btnPlay: document.getElementById('btn-play'),
+            liveEq: document.getElementById('live-eq')
+        };
+
+        let ctx2d = UI.c2d.getContext('2d', { alpha: false }); // Optimizacion
+        let ctx1d = UI.c1d.getContext('2d');
+        let ctxAnim = UI.cAnim.getContext('2d', { alpha: false });
+        let offscreenCanvas = document.createElement('canvas'); // Para el Heatmap
+        let offscreenCtx = offscreenCanvas.getContext('2d');
+
+        // Bindeo de Sliders
+        const bindSlider = (id, stateKey, valId, isFloat = true, callback = null) => {
+            const el = document.getElementById(id);
+            const valEl = document.getElementById(valId);
+            el.addEventListener('input', (e) => {
+                State[stateKey] = isFloat ? parseFloat(e.target.value) : parseInt(e.target.value);
+                valEl.innerText = isFloat ? State[stateKey].toFixed(2) + (valId.includes('l') || valId.includes('d') || valId.includes('D') ? ' m' : '') : State[stateKey];
+                if(stateKey === 'phi' && valId) valEl.innerText += ' rad';
+                updateEquations();
+                requestRender();
+                if(callback) callback();
+            });
+        };
+
+        bindSlider('sl-l1', 'lambda1', 'val-l1');
+        bindSlider('sl-a1', 'A1', 'val-a1');
+        bindSlider('sl-l2', 'lambda2', 'val-l2');
+        bindSlider('sl-a2', 'A2', 'val-a2');
+        bindSlider('sl-d', 'd', 'val-d', true, () => {
+            // Asegurar que P no esté sobre los focos exactamente
+        });
+        bindSlider('sl-phi', 'phi', 'val-phi');
+        bindSlider('sl-D', 'screenD', 'val-D');
+        bindSlider('sl-v', 'v', 'val-v');
+        bindSlider('sl-lw', 'lineWidth', 'val-lw', false);
+
+        // Bindeo de Toggles
+        const bindToggle = (id, stateKey, redrawHeatmap = false) => {
+            document.getElementById(id).addEventListener('change', (e) => {
+                State[stateKey] = e.target.checked;
+                if(redrawHeatmap) forceHeatmapRedraw = true;
+                requestRender();
+            });
+        };
+        bindToggle('tg-wf1', 'showWf1'); bindToggle('tg-wf2', 'showWf2');
+        bindToggle('tg-const', 'showConst'); bindToggle('tg-dest', 'showDest');
+        bindToggle('tg-heat', 'showHeat', true);
+
+        // Bindeo de Colores
+        const bindColor = (id, stateKey) => {
+            document.getElementById(id).addEventListener('input', (e) => {
+                State[stateKey] = e.target.value; requestRender();
+            });
+        };
+        bindColor('col-f1', 'colF1'); bindColor('col-f2', 'colF2');
+        bindColor('col-const', 'colConst'); bindColor('col-dest', 'colDest');
+        
+        document.getElementById('sel-palette').addEventListener('change', e => {
+            State.palette = e.target.value; forceHeatmapRedraw = true; requestRender();
+        });
+
+        // ┌─────────────────────────────────────────┐
+        // │ 📐 FÍSICA Y MATEMÁTICAS                 │
+        // └─────────────────────────────────────────┘
+        // Renderizado de ecuaciones KaTeX en vivo
+        function updateEquations() {
+            const eqStr = `\\Psi(x,y,t) = ${State.A1.toFixed(1)}\\sin(\\frac{2\\pi}{${State.lambda1.toFixed(1)}}r_1 - \\omega t) + ${State.A2.toFixed(1)}\\sin(\\frac{2\\pi}{${State.lambda2.toFixed(1)}}r_2 - \\omega t + ${State.phi.toFixed(2)})`;
+            katex.render(eqStr, UI.liveEq, { throwOnError: false, displayMode: false });
+        }
+
+        // Color Maps
+        const Palettes = {
+            viridis: (t) => { // Aproximación
+                const r = Math.max(0, Math.min(255, 255 * (0.1 + 0.9 * Math.sin(t * Math.PI))));
+                const g = Math.max(0, Math.min(255, 255 * t));
+                const b = Math.max(0, Math.min(255, 255 * (1 - t)));
+                return [r, g, b, 255];
+            },
+            inferno: (t) => { // Aproximación
+                const r = Math.max(0, Math.min(255, 255 * (1.5 * t)));
+                const g = Math.max(0, Math.min(255, 255 * (2 * t - 0.5)));
+                const b = Math.max(0, Math.min(255, 255 * (3 * t - 2)));
+                return [r, g, b, 255];
+            },
+            gray: (t) => { const v = t*255; return [v,v,v,255]; }
+        };
+
+        // ┌─────────────────────────────────────────┐
+        // │ 🎨 MOTOR DE RENDERIZADO (CANVAS)        │
+        // └─────────────────────────────────────────┘
+        let animFrameId = null;
+        let lastTime = 0;
+        let forceHeatmapRedraw = true; // Flag optimización
+        let heatmapImageData = null;
+
+        function resizeCanvas() {
+            const rect = document.getElementById('center-panel').getBoundingClientRect();
+            // Soporte Retina
+            const dpr = window.devicePixelRatio || 1;
+            [UI.c2d, UI.c1d, UI.cAnim].forEach(c => {
+                c.width = rect.width * dpr; c.height = rect.height * dpr;
+                // Escalar ctx si queremos que stroke(1) dibuje 1px real (aquí lo controlamos manual)
+            });
+            // Reset offset to center
+            State.offsetX = UI.c2d.width / 2;
+            State.offsetY = UI.c2d.height / 2;
+            
+            offscreenCanvas.width = UI.c2d.width;
+            offscreenCanvas.height = UI.c2d.height;
+            forceHeatmapRedraw = true;
+            requestRender();
+        }
+
+        // Transforma coordenadas mundo (metros) a pantalla (píxeles)
+        const w2s = (x, y) => ({
+            x: x * State.scale + State.offsetX,
+            y: -y * State.scale + State.offsetY // Y invertido en canvas
+        });
+        // Pantalla a Mundo
+        const s2w = (x, y) => ({
+            x: (x - State.offsetX) / State.scale,
+            y: -(y - State.offsetY) / State.scale
+        });
+
+        // Loop Principal
+        function renderLoop(time) {
+            if (State.activeTab === 'anim' && State.isPlaying) {
+                const dt = (time - lastTime) / 1000; // Segundos
+                State.t += dt * State.v * 5; // Multiplicador base para visualizar
+                drawAnim();
+            }
+            lastTime = time;
+            animFrameId = requestAnimationFrame(renderLoop);
+        }
+
+        // Llama un dibujo estático
+        function requestRender() {
+            if (State.activeTab === '2d') draw2D();
+            else if (State.activeTab === 'section') draw1D();
+            else if (!State.isPlaying) drawAnim(); // Redraw if paused and params changed
+        }
+
+        // ─── DIBUJO DEL PATRÓN 2D ──────────────────────────────────────────
+        function draw2D() {
+            const w = UI.c2d.width; const h = UI.c2d.height;
+            const isDark = document.body.classList.contains('dark-mode');
+            ctx2d.fillStyle = isDark ? '#1a1a2e' : '#ffffff';
+            ctx2d.fillRect(0, 0, w, h);
+
+            if (State.showHeat) {
+                drawHeatmapOptimized(ctx2d, w, h);
+            }
+
+            drawGrid(ctx2d, w, h, isDark);
+            
+            const foci = getFoci();
+            
+            // Frentes de onda (Círculos)
+            ctx2d.lineWidth = State.lineWidth;
+            const maxRadiusM = Math.max(w, h) / State.scale; // Distancia máxima a dibujar
+            
+            if (State.showWf1) {
+                ctx2d.strokeStyle = State.colF1;
+                for(let r=State.lambda1; r<maxRadiusM; r+=State.lambda1) drawCircle(ctx2d, foci[0], r);
+            }
+            if (State.showWf2) {
+                ctx2d.strokeStyle = State.colF2;
+                for(let r=State.lambda2; r<maxRadiusM; r+=State.lambda2) drawCircle(ctx2d, foci[1], r);
+            }
+
+            // Hipérbolas de Interferencia (Aproximadas para visualización)
+            // Se basan en el promedio de lambdas si son diferentes para mostrar el patrón general
+            const lambdaAvg = (State.lambda1 + State.lambda2) / 2; 
+            const k = 2 * Math.PI / lambdaAvg;
+            
+            if (State.showConst) {
+                ctx2d.strokeStyle = State.colConst;
+                ctx2d.setLineDash([5, 5]);
+                // n = 0, +-1, +-2 ...
+                let nMax = Math.floor(State.d / lambdaAvg);
+                for (let n = -nMax; n <= nMax; n++) {
+                    drawHyperbola(ctx2d, n * lambdaAvg);
+                }
+                ctx2d.setLineDash([]);
+            }
+            if (State.showDest) {
+                ctx2d.strokeStyle = State.colDest;
+                ctx2d.setLineDash([2, 4]);
+                let nMax = Math.floor(State.d / lambdaAvg);
+                for (let n = -nMax - 1; n <= nMax; n++) {
+                    drawHyperbola(ctx2d, (n + 0.5) * lambdaAvg);
+                }
+                ctx2d.setLineDash([]);
+            }
+
+            // Focos
+            drawFoco(ctx2d, foci[0], 'F₁', State.colF1);
+            drawFoco(ctx2d, foci[1], 'F₂', State.colF2);
+
+            // Punto P y líneas
+            const pScreen = w2s(State.P.x, State.P.y);
+            ctx2d.strokeStyle = isDark ? '#fff' : '#000';
+            ctx2d.setLineDash([2, 2]); ctx2d.lineWidth = 1;
+            
+            const f1s = w2s(foci[0].x, foci[0].y);
+            ctx2d.beginPath(); ctx2d.moveTo(f1s.x, f1s.y); ctx2d.lineTo(pScreen.x, pScreen.y); ctx2d.stroke();
+            
+            const f2s = w2s(foci[1].x, foci[1].y);
+            ctx2d.beginPath(); ctx2d.moveTo(f2s.x, f2s.y); ctx2d.lineTo(pScreen.x, pScreen.y); ctx2d.stroke();
+            
+            ctx2d.setLineDash([]);
+            ctx2d.fillStyle = '#f59e0b';
+            ctx2d.beginPath(); ctx2d.arc(pScreen.x, pScreen.y, 6, 0, Math.PI*2); ctx2d.fill();
+            ctx2d.stroke();
+            ctx2d.fillStyle = isDark ? '#fff' : '#000'; ctx2d.font = "16px var(--font-main)";
+            ctx2d.fillText('P', pScreen.x + 10, pScreen.y - 10);
+
+            updateLcdPanel();
+        }
+
+        // Mapa de calor píxel a píxel (Optimizando con TypedArray)
+        function drawHeatmapOptimized(ctx, w, h) {
+            if (!forceHeatmapRedraw && heatmapImageData) {
+                ctx.putImageData(heatmapImageData, 0, 0);
+                return;
+            }
+            
+            if(!heatmapImageData || heatmapImageData.width !== w || heatmapImageData.height !== h) {
+                heatmapImageData = offscreenCtx.createImageData(w, h);
+            }
+            
+            const data = heatmapImageData.data;
+            const foci = getFoci();
+            const k1 = 2 * Math.PI / State.lambda1;
+            const k2 = 2 * Math.PI / State.lambda2;
+            const A1 = State.A1; const A2 = State.A2; const phi = State.phi;
+            const maxA = A1 + A2;
+            const pal = Palettes[State.palette];
+            
+            // Constantes de transformación extraídas del loop
+            const invScale = 1 / State.scale;
+            const ox = State.offsetX; const oy = State.offsetY;
+            const f1x = foci[0].x; const f1y = foci[0].y;
+            const f2x = foci[1].x; const f2y = foci[1].y;
+
+            let idx = 0;
+            for (let py = 0; py < h; py++) {
+                const wy = -(py - oy) * invScale;
+                for (let px = 0; px < w; px++) {
+                    const wx = (px - ox) * invScale;
+                    
+                    const dx1 = wx - f1x; const dy1 = wy - f1y;
+                    const r1 = Math.sqrt(dx1*dx1 + dy1*dy1);
+                    
+                    const dx2 = wx - f2x; const dy2 = wy - f2y;
+                    const r2 = Math.sqrt(dx2*dx2 + dy2*dy2);
+                    
+                    // Amplitud estática (Envolvente temporal)
+                    // Psi_res_amp = sqrt(A1^2 + A2^2 + 2A1A2*cos(k1r1 - k2r2 - phi))
+                    const A_res = Math.sqrt(A1*A1 + A2*A2 + 2*A1*A2*Math.cos(k1*r1 - k2*r2 - phi));
+                    const normA = A_res / maxA; // 0 a 1
+                    
+                    const color = pal(normA);
+                    data[idx++] = color[0];
+                    data[idx++] = color[1];
+                    data[idx++] = color[2];
+                    data[idx++] = 200; // Alpha
+                }
+            }
+            offscreenCtx.putImageData(heatmapImageData, 0, 0);
+            ctx.putImageData(heatmapImageData, 0, 0);
+            forceHeatmapRedraw = false;
+        }
+
+        // ─── DIBUJO DE LA SECCIÓN TRANSVERSAL 1D ───────────────────────────
+        function draw1D() {
+            const w = UI.c1d.width; const h = UI.c1d.height;
+            const isDark = document.body.classList.contains('dark-mode');
+            ctx1d.fillStyle = isDark ? '#1a1a2e' : '#ffffff';
+            ctx1d.fillRect(0, 0, w, h);
+            drawGrid(ctx1d, w, h, isDark);
+
+            const foci = getFoci();
+            const D = State.screenD; // Y position
+            const k1 = 2 * Math.PI / State.lambda1;
+            const k2 = 2 * Math.PI / State.lambda2;
+
+            ctx1d.beginPath();
+            ctx1d.strokeStyle = State.colConst;
+            ctx1d.lineWidth = 3;
+            
+            let first = true;
+            // Evaluamos X a lo largo de la pantalla
+            for(let px = 0; px < w; px += 2) {
+                const wx = s2w(px, 0).x;
+                const r1 = Math.hypot(wx - foci[0].x, D - foci[0].y);
+                const r2 = Math.hypot(wx - foci[1].x, D - foci[1].y);
+                const A_res = Math.sqrt(State.A1**2 + State.A2**2 + 2*State.A1*State.A2*Math.cos(k1*r1 - k2*r2 - State.phi));
+                
+                // Mapear A_res al eje Y del canvas (escalado visual)
+                const yScreen = State.offsetY - (A_res * State.scale);
+                
+                if(first) { ctx1d.moveTo(px, yScreen); first = false; }
+                else ctx1d.lineTo(px, yScreen);
+            }
+            ctx1d.stroke();
+
+            // Dibujar línea de la pantalla
+            const ds = w2s(0, D);
+            ctx1d.strokeStyle = isDark ? '#444' : '#ccc';
+            ctx1d.lineWidth = 1; ctx1d.setLineDash([5,5]);
+            ctx1d.beginPath(); ctx1d.moveTo(0, ds.y); ctx1d.lineTo(w, ds.y); ctx1d.stroke();
+            ctx1d.setLineDash([]);
+            ctx1d.fillStyle = ctx1d.strokeStyle;
+            ctx1d.fillText(`Pantalla (D = ${D.toFixed(1)}m)`, 10, ds.y - 5);
+        }
+
+        // ─── DIBUJO DE LA ANIMACIÓN ────────────────────────────────────────
+        function drawAnim() {
+            const w = UI.cAnim.width; const h = UI.cAnim.height;
+            const isDark = document.body.classList.contains('dark-mode');
+            
+            // Efecto de estela oscura (Motion Blur)
+            ctxAnim.fillStyle = isDark ? 'rgba(15, 23, 42, 0.3)' : 'rgba(255, 255, 255, 0.3)';
+            ctxAnim.fillRect(0, 0, w, h);
+            
+            const foci = getFoci();
+            const k1 = 2 * Math.PI / State.lambda1;
+            const k2 = 2 * Math.PI / State.lambda2;
+            const omega1 = 2 * Math.PI * State.v / State.lambda1;
+            const omega2 = 2 * Math.PI * State.v / State.lambda2;
+
+            ctxAnim.lineWidth = 2;
+            
+            // Dibujar ondas expandiéndose
+            const drawWaves = (foco, lambda, omega, phase, colorHex) => {
+                const maxR = Math.max(w, h) / State.scale;
+                // Radio base que crece con el tiempo, módulo lambda para bucle continuo
+                let rBase = (State.t * State.v) % lambda;
+                
+                for(let r = rBase; r < maxR; r += lambda) {
+                    if (r < 0.1) continue; // Evitar centro denso
+                    const p = w2s(foco.x, foco.y);
+                    const rPx = r * State.scale;
+                    
+                    // Alpha decae con la distancia
+                    const alpha = Math.max(0, 1 - (r / maxR));
+                    // Parse hex color
+                    const rC = parseInt(colorHex.slice(1,3), 16);
+                    const gC = parseInt(colorHex.slice(3,5), 16);
+                    const bC = parseInt(colorHex.slice(5,7), 16);
+                    
+                    ctxAnim.beginPath();
+                    ctxAnim.arc(p.x, p.y, rPx, 0, Math.PI*2);
+                    ctxAnim.strokeStyle = `rgba(${rC},${gC},${bC},${alpha})`;
+                    ctxAnim.stroke();
+                }
+            };
+
+            drawWaves(foci[0], State.lambda1, omega1, 0, State.colF1);
+            drawWaves(foci[1], State.lambda2, omega2, State.phi, State.colF2);
+
+            // Focos Pulsantes
+            const p1 = w2s(foci[0].x, foci[0].y);
+            const p2 = w2s(foci[1].x, foci[1].y);
+            const rPulse1 = 5 + 3*Math.sin(omega1 * State.t);
+            const rPulse2 = 5 + 3*Math.sin(omega2 * State.t + State.phi);
+
+            ctxAnim.fillStyle = State.colF1; ctxAnim.beginPath(); ctxAnim.arc(p1.x, p1.y, Math.max(2,rPulse1), 0, Math.PI*2); ctxAnim.fill();
+            ctxAnim.fillStyle = State.colF2; ctxAnim.beginPath(); ctxAnim.arc(p2.x, p2.y, Math.max(2,rPulse2), 0, Math.PI*2); ctxAnim.fill();
+        }
+
+        // ─── FUNCIONES AUXILIARES DE DIBUJO ────────────────────────────────
+        function drawGrid(ctx, w, h, isDark) {
+            ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+            ctx.lineWidth = 1;
+            ctx.font = '10px var(--font-mono)';
+            ctx.fillStyle = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)';
+
+            // Ejes X
+            const startX = Math.floor(s2w(0,0).x);
+            const endX = Math.ceil(s2w(w,0).x);
+            for(let x = startX; x <= endX; x++) {
+                const px = w2s(x, 0).x;
+                ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, h); ctx.stroke();
+                if(x !== 0) ctx.fillText(x, px + 2, State.offsetY + 12);
+            }
+
+            // Ejes Y
+            const startY = Math.floor(s2w(0,h).y);
+            const endY = Math.ceil(s2w(0,0).y);
+            for(let y = startY; y <= endY; y++) {
+                const py = w2s(0, y).y;
+                ctx.beginPath(); ctx.moveTo(0, py); ctx.lineTo(w, py); ctx.stroke();
+                if(y !== 0) ctx.fillText(y, State.offsetX + 2, py - 2);
+            }
+
+            // Ejes principales
+            ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)';
+            ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(0, State.offsetY); ctx.lineTo(w, State.offsetY); ctx.stroke(); // X
+            ctx.beginPath(); ctx.moveTo(State.offsetX, 0); ctx.lineTo(State.offsetX, h); ctx.stroke(); // Y
+        }
+
+        function drawCircle(ctx, center, radiusM) {
+            const p = w2s(center.x, center.y);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, radiusM * State.scale, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        function drawHyperbola(ctx, delta_r) {
+            const c = State.d / 2;
+            const a = Math.abs(delta_r) / 2;
+            if (a >= c) return; // No hay hipérbola si a >= c
+            const b = Math.sqrt(c*c - a*a);
+            
+            ctx.beginPath();
+            const step = 0.1;
+            const tMax = 2.5; // Limita longitud de brazos
+            const sign = delta_r >= 0 ? 1 : -1;
+            
+            let first = true;
+            for (let t = -tMax; t <= tMax; t += step) {
+                const x = sign * a * Math.cosh(t);
+                const y = b * Math.sinh(t);
+                const p = w2s(x, y);
+                if (first) { ctx.moveTo(p.x, p.y); first = false; }
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+        }
+
+        function drawFoco(ctx, foco, label, color) {
+            const p = w2s(foco.x, foco.y);
+            ctx.fillStyle = color;
+            ctx.beginPath(); ctx.arc(p.x, p.y, 8, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = document.body.classList.contains('dark-mode') ? '#fff' : '#000';
+            ctx.font = "bold 14px var(--font-main)";
+            ctx.fillText(label, p.x - 8, p.y + 22);
+        }
+
+        // Actualizar valores en el panel izquierdo (Punto P)
+        function updateLcdPanel() {
+            const foci = getFoci();
+            const dx1 = State.P.x - foci[0].x; const dy1 = State.P.y - foci[0].y;
+            const dx2 = State.P.x - foci[1].x; const dy2 = State.P.y - foci[1].y;
+            const r1 = Math.sqrt(dx1*dx1 + dy1*dy1);
+            const r2 = Math.sqrt(dx2*dx2 + dy2*dy2);
+            const dr = Math.abs(r1 - r2);
+            
+            UI.lcd.x.innerText = State.P.x.toFixed(2);
+            UI.lcd.y.innerText = State.P.y.toFixed(2);
+            UI.lcd.r1.innerText = r1.toFixed(2);
+            UI.lcd.r2.innerText = r2.toFixed(2);
+            UI.lcd.dr.innerText = dr.toFixed(2);
+
+            // Determinar estado aproximado (tolerancia)
+            const lambdaAvg = (State.lambda1 + State.lambda2)/2;
+            const ratio = dr / lambdaAvg;
+            const decimal = ratio - Math.floor(ratio);
+            
+            if(decimal < 0.1 || decimal > 0.9) {
+                UI.lcd.state.innerText = 'Constructiva';
+                UI.lcd.state.style.color = State.colConst;
+            } else if (decimal > 0.4 && decimal < 0.6) {
+                UI.lcd.state.innerText = 'Destructiva';
+                UI.lcd.state.style.color = State.colDest;
+            } else {
+                UI.lcd.state.innerText = 'Parcial';
+                UI.lcd.state.style.color = '#eab308'; // Amarillo
+            }
+        }
+
+        // ┌─────────────────────────────────────────┐
+        // │ 🖱️ INTERACTIVIDAD Y EVENTOS             │
+        // └─────────────────────────────────────────┘
+        
+        // Pestañas
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                State.activeTab = btn.dataset.tab;
+                
+                document.querySelectorAll('.canvas-container').forEach(c => c.classList.remove('active'));
+                document.getElementById(`view-${State.activeTab}`).classList.add('active');
+                
+                // Mostrar/Ocultar acordeones específicos
+                document.getElementById('acc-layers').style.display = State.activeTab === '2d' ? 'block' : 'none';
+                document.getElementById('acc-anim').style.display = State.activeTab === 'anim' ? 'block' : 'none';
+                
+                resizeCanvas(); // Fuerza renderizado adecuado
+            });
+        });
+
+        // Controles de Animación
+        UI.btnPlay.addEventListener('click', () => {
+            State.isPlaying = !State.isPlaying;
+            UI.btnPlay.innerHTML = State.isPlaying ? '<i data-lucide="pause"></i>' : '<i data-lucide="play"></i>';
+            lucide.createIcons();
+        });
+        document.getElementById('btn-reset').addEventListener('click', () => {
+            State.t = 0; if(!State.isPlaying) drawAnim();
+        });
+
+        // Interacción Mouse en Canvas (Drag & Drop)
+        let draggedNode = null; // 'f1', 'f2', 'P', 'pan'
+        let lastMouse = {x:0, y:0};
+
+        const getMousePos = (e, canvas) => {
+            const rect = canvas.getBoundingClientRect();
+            // Soporte Retina: Dividir coordenadas del ratón por CSS bounds, multiplicar por el ancho real no es necesario si operamos en coords CSS para la lógica de hit, pero el w2s/s2w funciona sobre el transform matrix manual.
+            // Para simplificar, operamos en escala nativa.
+            const dpr = window.devicePixelRatio || 1;
+            return {
+                x: (e.clientX - rect.left) * dpr,
+                y: (e.clientY - rect.top) * dpr
+            };
+        };
+
+        const handleMouseDown = (e) => {
+            if(State.panActive) {
+                draggedNode = 'pan'; lastMouse = getMousePos(e, e.target);
+                e.target.classList.add('grabbing'); return;
+            }
+            
+            const m = getMousePos(e, e.target);
+            const mw = s2w(m.x, m.y);
+            const foci = getFoci();
+            
+            // Hit Test P
+            if(Math.hypot(mw.x - State.P.x, mw.y - State.P.y) < 0.5) { draggedNode = 'P'; return; }
+            // Hit Test F1 / F2 (Solo modifican d simétricamente por simplicidad del modelo)
+            if(Math.hypot(mw.x - foci[0].x, mw.y - foci[0].y) < 0.5) { draggedNode = 'f1'; return; }
+            if(Math.hypot(mw.x - foci[1].x, mw.y - foci[1].y) < 0.5) { draggedNode = 'f2'; return; }
+        };
+
+        const handleMouseMove = (e) => {
+            const m = getMousePos(e, e.target);
+            const mw = s2w(m.x, m.y);
+            
+            // Tooltip Update
+            UI.tooltip.style.left = e.clientX + 'px';
+            UI.tooltip.style.top = e.clientY + 'px';
+            UI.tooltip.style.display = 'block';
+            
+            const foci = getFoci();
+            const r1 = Math.hypot(mw.x - foci[0].x, mw.y - foci[0].y);
+            const r2 = Math.hypot(mw.x - foci[1].x, mw.y - foci[1].y);
+            UI.tooltip.innerText = `x: ${mw.x.toFixed(2)}, y: ${mw.y.toFixed(2)}\nr₁: ${r1.toFixed(2)}\nr₂: ${r2.toFixed(2)}\nΔr: ${Math.abs(r1-r2).toFixed(2)}`;
+
+            if(!draggedNode) return;
+
+            if(draggedNode === 'pan') {
+                State.offsetX += (m.x - lastMouse.x);
+                State.offsetY += (m.y - lastMouse.y);
+                lastMouse = m;
+                forceHeatmapRedraw = true;
+            } else if (draggedNode === 'P') {
+                State.P.x = mw.x; State.P.y = mw.y;
+            } else if (draggedNode === 'f1' || draggedNode === 'f2') {
+                // Actualiza 'd' basado en distancia horizontal al origen
+                let newD = Math.abs(mw.x) * 2;
+                newD = Math.max(0.5, Math.min(20, newD));
+                State.d = newD;
+                document.getElementById('sl-d').value = newD;
+                document.getElementById('val-d').innerText = newD.toFixed(2) + ' m';
+                forceHeatmapRedraw = true;
+            }
+            requestRender();
+        };
+
+        const handleMouseUp = (e) => {
+            draggedNode = null;
+            e.target.classList.remove('grabbing');
+        };
+
+        // Asignar eventos a todos los canvas
+        [UI.c2d, UI.c1d, UI.cAnim].forEach(c => {
+            c.addEventListener('mousedown', handleMouseDown);
+            c.addEventListener('mousemove', handleMouseMove);
+            c.addEventListener('mouseup', handleMouseUp);
+            c.addEventListener('mouseleave', (e) => { handleMouseUp(e); UI.tooltip.style.display = 'none'; });
+            
+            // Zoom con rueda
+            c.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomFactor = 1.1;
+                if(e.deltaY < 0) State.scale *= zoomFactor;
+                else State.scale /= zoomFactor;
+                State.scale = Math.max(10, Math.min(200, State.scale));
+                forceHeatmapRedraw = true;
+                requestRender();
+            }, { passive: false });
+        });
+
+        // Controles de Vista flotantes
+        document.getElementById('tool-zoomin').onclick = () => { State.scale *= 1.2; forceHeatmapRedraw=true; requestRender(); };
+        document.getElementById('tool-zoomout').onclick = () => { State.scale /= 1.2; forceHeatmapRedraw=true; requestRender(); };
+        document.getElementById('tool-resetview').onclick = () => { 
+            State.scale = 40; resizeCanvas(); 
+        };
+        document.getElementById('tool-pan').onclick = (e) => {
+            State.panActive = !State.panActive;
+            const icon = e.currentTarget.querySelector('i');
+            if(State.panActive) {
+                icon.setAttribute('data-lucide', 'move');
+                [UI.c2d, UI.c1d, UI.cAnim].forEach(c => c.classList.add('grab'));
+            } else {
+                icon.setAttribute('data-lucide', 'hand');
+                [UI.c2d, UI.c1d, UI.cAnim].forEach(c => c.classList.remove('grab'));
+            }
+            lucide.createIcons();
+        };
+
+        // ┌─────────────────────────────────────────┐
+        // │ 🎁 EXTRAS Y EASTER EGGS                 │
+        // └─────────────────────────────────────────┘
+
+        // Modo Oscuro
+        document.getElementById('tg-dark').addEventListener('change', (e) => {
+            if(e.target.checked) document.body.classList.add('dark-mode');
+            else document.body.classList.remove('dark-mode');
+            requestRender();
+        });
+
+        // Acordeones Funcionalidad
+        window.toggleAcc = function(el) {
+            const content = el.nextElementSibling;
+            const icon = el.querySelector('i');
+            if (content.style.display === "none") {
+                content.style.display = "flex";
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.display = "none";
+                icon.style.transform = "rotate(-90deg)";
+            }
+        };
+
+        // Modales
+        window.openModal = id => { document.getElementById(id).classList.add('active'); katex.renderMathInElement(document.getElementById(id), {delimiters: [{left: "$$", right: "$$", display: true}, {left: "\\(", right: "\\)", display: false}]}); };
+        window.closeModal = id => document.getElementById(id).classList.remove('active');
+
+        // Easter Egg 1: Exportar con Confetti
+        document.getElementById('btn-export').addEventListener('click', () => {
+            // Unir todos los canvas visibles
+            const activeCanvas = document.querySelector('.canvas-container.active canvas');
+            const link = document.createElement('a');
+            link.download = `Interferencia_${State.activeTab}.png`;
+            link.href = activeCanvas.toDataURL('image/png');
+            link.click();
+            
+            // Confetti 🎉
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, zIndex: 3000 });
+        });
+
+        // Easter Egg 2: Doble Rendija (Experimento de Young)
+        document.getElementById('btn-young').addEventListener('click', () => {
+            // Forzar parámetros iguales y distancia pequeña
+            State.lambda1 = 1.0; State.lambda2 = 1.0;
+            document.getElementById('sl-l1').value = 1.0; document.getElementById('val-l1').innerText = "1.00 m";
+            document.getElementById('sl-l2').value = 1.0; document.getElementById('val-l2').innerText = "1.00 m";
+            State.A1 = 1.0; State.A2 = 1.0;
+            document.getElementById('sl-a1').value = 1.0; document.getElementById('val-a1').innerText = "1.00";
+            document.getElementById('sl-a2').value = 1.0; document.getElementById('val-a2').innerText = "1.00";
+            State.d = 3.0; 
+            document.getElementById('sl-d').value = 3.0; document.getElementById('val-d').innerText = "3.00 m";
+            State.phi = 0;
+            document.getElementById('sl-phi').value = 0; document.getElementById('val-phi').innerText = "0.00 rad";
+            
+            State.scale = 60; // Zoom in
+            State.showHeat = true; document.getElementById('tg-heat').checked = true;
+            forceHeatmapRedraw = true;
+            updateEquations();
+            requestRender();
+            
+            // Notificación flotante visual
+            const notif = document.createElement('div');
+            notif.innerText = "Experimento de Young Configurado 🔬";
+            notif.style.cssText = "position:absolute; top:20px; left:50%; transform:translateX(-50%); background:var(--accent-orange); color:white; padding:10px 20px; border-radius:20px; font-weight:bold; z-index:5000; animation: fadeout 3s forwards;";
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 3000);
+        });
+
+        // Descargar la aplicación completa como archivo HTML
+        document.getElementById('btn-download-app').addEventListener('click', () => {
+            const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Simulador_Interferencia_Ondas.html';
+            link.click();
+            URL.revokeObjectURL(url);
+            
+            const notif = document.createElement('div');
+            notif.innerText = "Descargando Simulador (Offline) 💾";
+            notif.style.cssText = "position:absolute; top:20px; left:50%; transform:translateX(-50%); background:var(--accent-green); color:white; padding:10px 20px; border-radius:20px; font-weight:bold; z-index:5000; animation: fadeout 3s forwards;";
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 3000);
+        });
+
+        // Easter Egg 3: Modo Aurora
+        document.getElementById('btn-aurora').addEventListener('click', () => {
+            const aurora = document.getElementById('aurora-bg');
+            aurora.classList.toggle('active');
+            if(aurora.classList.contains('active')) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('tg-dark').checked = true;
+                // Hacer paneles más transparentes para ver la aurora
+                document.documentElement.style.setProperty('--bg-panel', 'rgba(15, 23, 42, 0.4)');
+            } else {
+                document.documentElement.style.setProperty('--bg-panel', 'rgba(30, 41, 59, 0.75)');
+            }
+            requestRender();
+        });
+
+        // Easter Egg 4: Fuegos Artificiales en el Logo (Triple click aproximado usando doble click nativo)
+        document.getElementById('main-logo').addEventListener('dblclick', (e) => {
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 3000 };
+            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) { return clearInterval(interval); }
+                var particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        });
+
+        // ┌─────────────────────────────────────────┐
+        // │ 🚀 INICIALIZACIÓN                       │
+        // └─────────────────────────────────────────┘
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Estilos CSS dinámicos (keyframes)
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes fadeout { 0%{opacity:1; transform:translate(-50%, 0);} 80%{opacity:1;} 100%{opacity:0; transform:translate(-50%, -20px);} }`;
+        document.head.appendChild(style);
+
+        // Arrancar
+        updateEquations();
+        resizeCanvas();
+        requestAnimationFrame(renderLoop);
+
+    </script>
+
+</body></html>
